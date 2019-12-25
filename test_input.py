@@ -2,12 +2,12 @@ import pytest
 import mx_mul
 
 
-def test_user_input():
-    matrix_A, matrix_B = mx_mul.user_input()
-    assert matrix_A.rows == len(matrix_A.values)
-    assert matrix_A.columns == len(matrix_A.values[0])
-    assert matrix_B.rows == len(matrix_B.values)
-    assert matrix_B.columns == len(matrix_B.values[0])
+# def test_user_input():
+#     matrix_A, matrix_B = mx_mul.user_input()
+#     assert matrix_A.rows == len(matrix_A.values)
+#     assert matrix_A.columns == len(matrix_A.values[0])
+#     assert matrix_B.rows == len(matrix_B.values)
+#     assert matrix_B.columns == len(matrix_B.values[0])
 
 
 def test_dimensions():
