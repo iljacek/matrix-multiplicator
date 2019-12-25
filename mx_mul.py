@@ -1,6 +1,3 @@
-import pypy
-psyco.full()
-
 from pip._vendor.urllib3.connectionpool import xrange
 
 
@@ -27,20 +24,36 @@ class Matrix:
         return Matrix(self.rows, self.columns, product)
 
 
+def get_dimensions():
+    columns = int(input("width: "))
+    rows = int(input("height: "))
+    if rows <= 0 and columns <= 0:
+        raise ValueError("Invalid dimensions of matrix")
+    return rows, columns
+
+
+def fill_values(rows, columns):
+    values = []
+    for row in range(rows):
+        values.append(list(map(int, input().split(" "))))
+        if len(values[row]) != columns:
+            raise ValueError("Invalid number of elements in row")
+    return values
+
+
 def user_input():
-    print("Matrix A")
-    rows_A = int(input("width: "))
-    columns_A = int(input("height: "))
+    print("\nMatrix A")
+    rows_A, columns_A = get_dimensions()
+    print("\nMatrix B")
+    rows_B, columns_B = get_dimensions()
 
-    print("Matrix B")
-    rows_B = int(input("width: "))
-    columns_B = int(input("height: "))
+    print("\nMatrix A values: ")
+    values_A = fill_values(rows_A, columns_A)
+    print("\nMatrix B values: ")
+    values_B = fill_values(rows_B, columns_B)
 
+    matrix_A = Matrix(rows_A, columns_A, values_A)
+    matrix_B = Matrix(rows_B, columns_B, values_B)
 
-    print("Matrix A values: ")
-    values = [[int((input("Enter element to row {}, column {}: ".format(row, column))))
-               for column in range(columns_A)] for row in range(rows_A)]
-
-    matrix = Matrix(rows_A, columns_A, values)
-    print("Input is a {}".format(matrix))
-    return matrix
+    # print("Input matrices are: \n{} \n{}".format(matrix_A, matrix_B))
+    return matrix_A, matrix_B
