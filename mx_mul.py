@@ -23,6 +23,10 @@ class Matrix:
                     product[i][j] += self.values[i][k] * other.values[k][j]
         return Matrix(self.rows, self.columns, product)
 
+    def print_matrix_content(self):
+        for row in range(self.rows):
+            print(" ".join(map(str, self.values[row])))
+
 
 def get_dimensions():
     columns = int(input("width: "))
