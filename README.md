@@ -35,7 +35,7 @@ After that command prompt will ask for user input. When user is asked to enter M
 
 ### Example
 
-    $ python mx_mul
+    $ python3 mx_mul
 
     Matrix A
     width: 2
