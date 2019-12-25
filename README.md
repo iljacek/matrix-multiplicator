@@ -29,9 +29,10 @@ To run the program, you can enter following commands in your shell:
     $ python3 mx_mul
     
 After that command prompt will ask for user input. When user is asked to enter Matrix content, the values in row are separated by space character and the rows are separated by new line. Example (for width=3, height=2):
-  Matrix A values: 
-  1 2 3
-  4 5 4
+    
+    Matrix A values: 
+    1 2 3
+    4 5 4
 
 ### Example
 
