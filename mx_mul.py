@@ -13,11 +13,10 @@ class Matrix:
     def multiply(self, other):
         if self.columns != other.rows:
             raise TypeError("Size of first matrix columns and second matrix rows does not correspond")
-        product = [[0 for j in range(other.columns)] for i in range(self.rows)]
-        for i in range(self.rows):
-            for k in range(self.columns):
-                for j in range(other.columns):
-                    product[i][j] += self.values[i][k] * other.values[k][j]
+        transposed = list(zip(*other.values))
+
+        product = [[sum(ele_a * ele_b for ele_a, ele_b in zip(self.values[row], transposed[column]))
+                    for column in range(other.columns)] for row in range(self.rows)]
         return Matrix(self.rows, self.columns, product)
 
     def print_matrix_content(self):

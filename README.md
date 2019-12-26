@@ -8,7 +8,9 @@ Program first writes expected input and waits for user to put all required field
 
 If users input was correct, the values are further processed and two Matrix objects are created. Matrix object contains dimensions of matrix and its content. Matrix class contains method for multiplying the current instance with another object of the same type. 
 
-First of all, method checks, if dimensions of multiplied matrices are suitable for the operation. After that two-dimensional array filled with zeros is created. Finally the values are overwritten in three for loops. The loops are ordered in ikj-algorithm, which was slightly more time-efficient than ijk-algorithm. The result is processed into another Matrix object.
+First of all, method checks, if dimensions of multiplied matrices are suitable for the operation. After that, the second matrix is transposed using zip function. Finally, the matrices are multiplied row by row. Multiplication uses another zip function between rows of first matrix and the transposed second matrix. The result is processed into another Matrix object. 
+
+Profiling shown that the method which was using zip function was 2,23 times more time-effective than naive method, which was using three nested for loops in ikj-algorithm. Method was tested on two matrices of dimensions 5000x32 and 32x50.
 
 Matrix class contains another method, which can print the matrix in human readable form. This function is then used to show the resulting matrix.
 
