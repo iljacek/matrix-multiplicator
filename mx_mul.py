@@ -89,3 +89,15 @@ def user_input():
 
     # print("Input matrices are: \n{} \n{}".format(matrix_A, matrix_B))
     return matrix_A, matrix_B
+
+
+def main():
+    matrix_1, matrix_2 = user_input()
+
+    print("\nResult: ")
+    result = matrix_1.multiply(matrix_2)
+    result.print_matrix_content()
+
+
+if __name__ == '__main__':
+    main()
