@@ -25,10 +25,9 @@ inside your activated virtual environment.
 
 ## How to use
 
-To run the program, you can enter following commands in your shell:
+To run the program, you can clone this repository and then you can execute the mx_mul.py file inside:
 
-    $ git clone https://github.com/iljacek/mx_mul.git
-    $ python3 mx_mul
+    $ python3 mx_mul.py
     
 After that command prompt will ask for user input. When user is asked to enter Matrix content, the values in row are separated by space character and the rows are separated by new line. Example (for width=3, height=2):
     
@@ -38,7 +37,7 @@ After that command prompt will ask for user input. When user is asked to enter M
 
 ### Example
 
-    $ python3 mx_mul
+    $ python3 mx_mul.py
 
     Matrix A
     width: 2
